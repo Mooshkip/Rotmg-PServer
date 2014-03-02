@@ -503,6 +503,13 @@ namespace wServer.realm.entities
                                     else
                                         world = RealmManager.GetWorld(World.NEXUS_ID);
                                 } break;
+                            case 0x0705:
+                                {
+                                    world = RealmManager.GetWorld(World.NEXUS_ID);
+                                    
+                                } break;
+                            case 0x0706:
+                                world = RealmManager.GetWorld(World.PVP_ID); break;
                             case 0x0712:
                                 world = RealmManager.GetWorld(World.NEXUS_ID); break;
                             case 0x071d:

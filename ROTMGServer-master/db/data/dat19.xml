@@ -284,6 +284,17 @@
 		<IntergamePortal/>
 		<Texture><File>lofiEnvironment</File><Index>0x7c</Index></Texture>
 	</Object>
+	<Object type="0x0705" id="Leave PVP">
+		<Class>Portal</Class>
+		<IntergamePortal/>
+		<Texture><File>lofiEnvironment</File><Index>0x7c</Index></Texture>
+		<SpawnPoint/>
+	</Object>
+	<Object type="0x0706" id="Enter PVP">
+		<Class>Portal</Class>
+		<IntergamePortal/>
+		<Texture><File>lofiEnvironment</File><Index>0x7c</Index></Texture>
+	</Object>
 	<Object type="0x070c" id="Glowing Portal">
 		<Class>Portal</Class>
 		<IntergamePortal/>
