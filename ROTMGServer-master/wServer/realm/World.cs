@@ -89,6 +89,7 @@ namespace wServer.realm
             return true;
         }
 
+        public bool PVP { get; protected set; }
         public bool AllowTeleport { get; protected set; }
         public bool ShowDisplays { get; protected set; }
         public string[] ClientXML { get; protected set; }
@@ -153,8 +154,14 @@ namespace wServer.realm
 
                 }
             EnemiesCollision = new CollisionMap<Entity>(0, w, h);
-            PlayersCollision = new CollisionMap<Entity>(1, w, h);
-
+            if (!PVP)
+            {
+                PlayersCollision = new CollisionMap<Entity>(1, w, h);
+            }
+            else
+            {
+                PlayersCollision = new CollisionMap<Entity>(0, w, h);
+            }
             Projectiles.Clear();
             StaticObjects.Clear();
             Enemies.Clear();
