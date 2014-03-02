@@ -54,7 +54,7 @@ namespace wServer.realm.entities
 
         public bool Glowing { get; set; }
         public int MP { get; set; }
-
+        
         public int Decision { get; set; }
         public Combinations combs { get; set; }
         public Prices price { get; set; }
@@ -69,6 +69,7 @@ namespace wServer.realm.entities
         public int[] Stats { get; private set; }
         public int[] Boost { get; private set; }
 
+        public Boolean PVP { get; private set; }
         protected override void ImportStats(StatsType stats, object val)
         {
             base.ImportStats(stats, val);
