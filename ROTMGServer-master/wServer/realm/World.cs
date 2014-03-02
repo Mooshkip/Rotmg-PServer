@@ -27,6 +27,7 @@ namespace wServer.realm
         public const int SHOP = -10;
         public const int GHALL = -11;
         public const int MARKET = -12;
+        public const int PVP_ID = -13;
 
         protected World()
         {
@@ -126,7 +127,7 @@ namespace wServer.realm
 
         protected void FromWorldMap(System.IO.Stream dat)
         {
-            log.InfoFormat("Loading map for world {0}({1})...", Id, Name);
+            log.InfoFormat("Loadng map for world {0}({1})...", Id, Name);
 
             Wmap map = new Wmap();
             this.Map = map;
