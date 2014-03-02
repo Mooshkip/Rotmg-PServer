@@ -21,13 +21,28 @@ namespace wServer.realm.entities
                     0,
                     pkt.Time + tickMapping, pkt.Position, pkt.Angle);
                 Owner.EnterWorld(prj);
-                Owner.BroadcastPacket(new AllyShootPacket()
+                if (!pkt.PVP)
                 {
-                    OwnerId = Id,
-                    Angle = pkt.Angle,
-                    ContainerType = pkt.ContainerType,
-                    BulletId = pkt.BulletId
-                }, this);
+                    Owner.BroadcastPacket(new AllyShootPacket()
+                    {
+                        OwnerId = Id,
+                        Angle = pkt.Angle,
+                        ContainerType = pkt.ContainerType,
+                        BulletId = pkt.BulletId
+                    }, this);
+                }
+                else
+                {
+                    Owner.BroadcastPacket(new ShootPacket()
+                    {
+                        BulletId = pkt.BulletId,
+                        OwnerId = Id,
+                        ContainerType = ObjectType,
+                        Position = prj.BeginPos,
+                        Angle = pkt.Angle,
+                        Damage = (short)prj.Damage
+                    }, this);
+                }
                 fames.Shoot(prj);
             }
         }
