@@ -6,21 +6,21 @@ using System.IO;
 
 namespace wServer.realm.worlds
 {
-    public class WineCellarMap : World
+    public class PVPMap : World
     {
-        public WineCellarMap()
+        public PVPMap()
         {
             Id = PVP_ID;
             Name = "PVP World";
             Background = 0;
             AllowTeleport = false;
-            base.FromWorldMap(typeof(RealmManager).Assembly.GetManifestResourceStream("wServer.realm.worlds.pvp.wmap"));
+            base.FromWorldMap(typeof(RealmManager).Assembly.GetManifestResourceStream("wServer.realm.worlds.winecellar.wmap"));
             PVP = true;
         }
 
         public override World GetInstance(ClientProcessor psr)
         {
-            return RealmManager.AddWorld(new WineCellarMap());
+            return RealmManager.AddWorld(new PVPMap());
         }
     }
 }

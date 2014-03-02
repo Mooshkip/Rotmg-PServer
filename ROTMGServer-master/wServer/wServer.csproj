@@ -126,6 +126,7 @@
     <Compile Include="realm\worlds\BattleArena.cs" />
     <Compile Include="realm\worlds\Mine.cs" />
     <Compile Include="realm\worlds\MarketMap.cs" />
+    <Compile Include="realm\worlds\PVP.cs" />
     <Compile Include="realm\worlds\Secret.cs" />
     <Compile Include="realm\worlds\SnakePit.cs" />
     <Compile Include="realm\worlds\Island.cs" />
