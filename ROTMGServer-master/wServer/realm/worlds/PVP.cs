@@ -14,7 +14,7 @@ namespace wServer.realm.worlds
             Name = "PVP World";
             Background = 0;
             AllowTeleport = false;
-            base.FromWorldMap(typeof(RealmManager).Assembly.GetManifestResourceStream("wServer.realm.worlds.winecellar.wmap"));
+            base.FromWorldMap(typeof(RealmManager).Assembly.GetManifestResourceStream("wServer.realm.worlds.winecellar.wmap")); 
             PVP = true;
         }
 
