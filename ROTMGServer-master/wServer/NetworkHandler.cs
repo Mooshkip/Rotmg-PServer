@@ -238,6 +238,7 @@ namespace wServer
         {
             try
             {
+                Console.WriteLine("Sending pkt: " + pkt.ID.ToString());
                 pendingPackets.Enqueue(pkt);
                 if (CanSendPacket(send, false))
                 {

@@ -18,6 +18,11 @@ namespace wServer.svrPackets
         protected override void Read(ClientProcessor psr, NReader rdr)
         {
             TickId = rdr.ReadInt32();
+
+            
+            
+            
+            
             TickTime = rdr.ReadInt32();
 
             UpdateStatuses = new ObjectStats[rdr.ReadInt16()];

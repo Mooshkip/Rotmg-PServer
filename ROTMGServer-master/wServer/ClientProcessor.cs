@@ -69,6 +69,7 @@ namespace wServer
         
         internal void ProcessPacket(Packet pkt)
         {
+            
             try
             {
                 if (pkt.ID == PacketID.Hello)
@@ -82,7 +83,11 @@ namespace wServer
                 else if (pkt.ID == PacketID.Move)
                     RealmManager.Logic.AddPendingAction(t => entity.Move(t, pkt as MovePacket), PendingPriority.Networking);
                 else if (pkt.ID == PacketID.PlayerShoot)
+                {
+                    Console.WriteLine("sweg");
+                    Console.WriteLine("found a stupid mother fucking player shoot packet");
                     RealmManager.Logic.AddPendingAction(t => entity.PlayerShoot(t, pkt as PlayerShootPacket), PendingPriority.Networking);
+                }
                 else if (pkt.ID == PacketID.EnemyHit)
                     RealmManager.Logic.AddPendingAction(t => entity.EnemyHit(t, pkt as EnemyHitPacket), PendingPriority.Networking);
                 else if (pkt.ID == PacketID.OtherHit)

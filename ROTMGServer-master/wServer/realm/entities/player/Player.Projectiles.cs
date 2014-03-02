@@ -11,6 +11,7 @@ namespace wServer.realm.entities
     {
         public void PlayerShoot(RealmTime time, PlayerShootPacket pkt)
         {
+            Console.WriteLine("Playershoot called!");
             System.Diagnostics.Debug.WriteLine(pkt.Position); // Was Commented!
             Item item = XmlDatas.ItemDescs[pkt.ContainerType];
             if (item.ObjectType == Inventory[0].ObjectType || item.ObjectType == Inventory[1].ObjectType)
@@ -21,28 +22,28 @@ namespace wServer.realm.entities
                     0,
                     pkt.Time + tickMapping, pkt.Position, pkt.Angle);
                 Owner.EnterWorld(prj);
-                if (!pkt.PVP)
-                {
-                    Owner.BroadcastPacket(new AllyShootPacket()
+
+#if false
+		                    Owner.BroadcastPacket(new AllyShootPacket()
                     {
                         OwnerId = Id,
                         Angle = pkt.Angle,
                         ContainerType = pkt.ContainerType,
                         BulletId = pkt.BulletId
-                    }, this);
-                }
-                else
+                    }, this);  
+	#endif
+                
+
+                Owner.BroadcastPacket(new ShootPacket()
                 {
-                    Owner.BroadcastPacket(new ShootPacket()
-                    {
-                        BulletId = pkt.BulletId,
-                        OwnerId = Id,
-                        ContainerType = ObjectType,
-                        Position = prj.BeginPos,
-                        Angle = pkt.Angle,
-                        Damage = (short)prj.Damage
-                    }, this);
-                }
+                    BulletId = pkt.BulletId,
+                    OwnerId = Id,
+                    ContainerType = ObjectType,
+                    Position = prj.BeginPos,
+                    Angle = pkt.Angle,
+                    Damage = (short)prj.Damage
+                }, null);
+                
                 fames.Shoot(prj);
             }
         }
