@@ -7440,6 +7440,30 @@
     <BagType>1</BagType>
     <XpBoost/>
   </Object>
+    <Object type="0xe37" id="Max">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>lofiObj5</File>
+      <Index>0x89</Index>
+    </Texture>
+    <SlotType>10</SlotType>
+	<Tier>2</Tier>
+	<Activate stat="20" amount="100">IncrementStat</Activate>
+    <Activate stat="21" amount="100">IncrementStat</Activate>
+    <Activate stat="22" amount="100">IncrementStat</Activate>
+    <Activate stat="26" amount="100">IncrementStat</Activate>
+    <Activate stat="27" amount="100">IncrementStat</Activate>
+    <Activate stat="28" amount="100">IncrementStat</Activate>
+    <Activate stat="0" amount="1000">IncrementStat</Activate>
+    <Activate stat="3" amount="1000">IncrementStat</Activate>
+    <Description>m4xx m3 0u7 br0</Description>
+    <Sound>use_potion</Sound>
+    <Consumable/>
+    <Potion/>
+	<PUndead/>
+    <BagType>3</BagType>
+  </Object>
   
   <Object type="0xae2" id="Strike Amulet">
     <Class>Equipment</Class>

@@ -73,7 +73,27 @@ namespace wServer.logic
             .Init(0x603, Behaves("Poison Scorpion",
                     IfNot.Instance(
                         Chasing.Instance(4, 8, 1, 0x604), SimpleWandering.Instance(4)),
-                    Cooldown.Instance(2000, SimpleAttack.Instance(8))))
+                    Cooldown.Instance(2000, SimpleAttack.Instance(8)),
+                    loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1, new LootDef(0, 1, 8, 8,
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7, ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8, ItemType.Ability))
+                            ))
+                    )
+                    
+                    ))
+                    
+                    
             .Init(0x953, Behaves("Bandit Leader",
                     IfNot.Instance(
                         Once.Instance(

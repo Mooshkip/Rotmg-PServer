@@ -26,24 +26,22 @@ namespace wServer.logic
                             Cooldown.Instance(500, SimpleAttack.Instance(10, projectileIndex: 1))
                         )
                     ),
-                    loot: new LootBehavior(
-                        new LootDef(0, 1, 0, 8,
+                    loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1,new LootDef(0, 1, 8, 8,
 
-                            Tuple.Create(0.15, (ILoot)new TierLoot(1, ItemType.Armor)),
-                            Tuple.Create(0.5, (ILoot)new TierLoot(1, ItemType.Ring)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
 
-                            Tuple.Create(0.20, (ILoot)new TierLoot(2, ItemType.Armor)),
-                            Tuple.Create(0.2, (ILoot)new TierLoot(2, ItemType.Weapon)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
 
-                            Tuple.Create(0.25, (ILoot)new TierLoot(3, ItemType.Armor)),
-                            Tuple.Create(0.3, (ILoot)new TierLoot(3, ItemType.Weapon)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
 
-                            Tuple.Create(0.30, (ILoot)new TierLoot(4, ItemType.Armor)),
-                            Tuple.Create(0.4, (ILoot)new TierLoot(4, ItemType.Weapon))
-                            ),
-                            Tuple.Create(100, new LootDef(0, 1, 0, 2,
-                            Tuple.Create(0.01, (ILoot)new ItemLoot("Pirate Rum"))
-                            )))
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7,ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8,ItemType.Ability))
+                            ))
+                    )
             ))
             .Init(0x687, Behaves("Cave Pirate Brawler",
                 IfNot.Instance(
@@ -52,10 +50,22 @@ namespace wServer.logic
                     ),
                     Cooldown.Instance(500, MultiAttack.Instance(100, 1 * (float)Math.PI / 30, 1, 0, projectileIndex: 0)
                     ),
-                    loot: new LootBehavior(
-                            new LootDef(0, 1, 0, 8,
-                            Tuple.Create(0.01, (ILoot)HpPotionLoot.Instance)
+                    loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1, new LootDef(0, 1, 8, 8,
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7, ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8, ItemType.Ability))
                             ))
+                    )
             ))
             .Init(0x688, Behaves("Cave Pirate Sailor",
                 IfNot.Instance(
@@ -64,10 +74,22 @@ namespace wServer.logic
                     ),
                     Cooldown.Instance(500, MultiAttack.Instance(100, 1 * (float)Math.PI / 30, 1, 0, projectileIndex: 0)
                     ),
-                    loot: new LootBehavior(
-                            new LootDef(0, 1, 0, 8,
-                            Tuple.Create(0.01, (ILoot)HpPotionLoot.Instance)
+                    loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1, new LootDef(0, 1, 8, 8,
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7, ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8, ItemType.Ability))
                             ))
+                    )
             ))
             .Init(0x689, Behaves("Cave Pirate Veteran",
                 IfNot.Instance(
@@ -76,19 +98,43 @@ namespace wServer.logic
                     ),
                     Cooldown.Instance(500, MultiAttack.Instance(100, 1 * (float)Math.PI / 30, 1, 0, projectileIndex: 0)
                     ),
-                    loot: new LootBehavior(
-                            new LootDef(0, 1, 0, 8,
-                            Tuple.Create(0.01, (ILoot)HpPotionLoot.Instance)
+                loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1, new LootDef(0, 1, 8, 8,
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7, ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8, ItemType.Ability))
                             ))
+                    )
             ))
             .Init(0x68f, Behaves("Cave Pirate Cabin Boy",
                 new RunBehaviors(
                     SmoothWandering.Instance(2f, 2f)
                     ),
-                    loot: new LootBehavior(
-                            new LootDef(0, 1, 0, 8,
-                            Tuple.Create(0.1, (ILoot)new TierLoot(1, ItemType.Weapon))
+                loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1, new LootDef(0, 1, 8, 8,
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7, ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8, ItemType.Ability))
                             ))
+                    )
             ))
             .Init(0x68e, Behaves("Cave Pirate Hunchback",
                 new RunBehaviors(
@@ -103,10 +149,22 @@ namespace wServer.logic
                 new RunBehaviors(
                     SmoothWandering.Instance(2f, 2f)
                     ),
-                    loot: new LootBehavior(
-                            new LootDef(0, 1, 0, 8,
-                            Tuple.Create(0.1, (ILoot)new TierLoot(1, ItemType.Ability))
+                loot: new LootBehavior(LootDef.Empty,
+                        Tuple.Create(1, new LootDef(0, 1, 8, 8,
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(12, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(13, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(15, ItemType.Armor)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(14, ItemType.Weapon)),
+
+                            Tuple.Create(1.0, (ILoot)new TierLoot(7, ItemType.Ability)),
+                            Tuple.Create(1.0, (ILoot)new TierLoot(8, ItemType.Ability))
                             ))
+                    )
             ))
             .Init(0x68a, Behaves("Cave Pirate Moll",
                 new RunBehaviors(
